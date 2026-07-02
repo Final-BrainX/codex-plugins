@@ -1,0 +1,41 @@
+{
+  "name": "brainx",
+  "version": "0.1.0",
+  "description": "Connect Codex to BrainX notes through the BrainX MCP server.",
+  "author": {
+    "name": "BrainX",
+    "url": "https://github.com/Final-BrainX"
+  },
+  "homepage": "https://github.com/Final-BrainX/codex-plugins#readme",
+  "repository": "https://github.com/Final-BrainX/codex-plugins",
+  "license": "MIT",
+  "keywords": [
+    "brainx",
+    "codex",
+    "mcp",
+    "notes",
+    "knowledge"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "BrainX",
+    "shortDescription": "Search, read, and create BrainX notes from Codex.",
+    "longDescription": "BrainX connects Codex to your BrainX workspace notes through the public BrainX MCP endpoint. Use it to search your notes, read note details, and create new notes after setting BRAINX_MCP_API_KEY.",
+    "developerName": "BrainX",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Search",
+      "MCP"
+    ],
+    "websiteURL": "https://brainx.p-e.kr",
+    "brandColor": "#2563EB",
+    "defaultPrompt": [
+      "Search my BrainX notes for project context.",
+      "Create a BrainX note from this draft.",
+      "Show my BrainX MCP identity."
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "brainx-codex",
+  "interface": {
+    "displayName": "BrainX Codex Plugins"
+  },
+  "plugins": [
+    {
+      "name": "brainx",
+      "source": {
+        "source": "local",
+        "path": "./plugins/brainx"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
