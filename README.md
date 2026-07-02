@@ -1,47 +1,47 @@
 # BrainX Codex Plugins
 
-Public Codex plugin marketplace for BrainX.
+BrainX용 공개 Codex 플러그인 마켓플레이스입니다.
 
-The `brainx` plugin connects Codex to your BrainX workspace notes through the BrainX MCP server at:
+`brainx` 플러그인은 Codex가 BrainX MCP 서버를 통해 사용자의 BrainX 워크스페이스 노트에 접근할 수 있게 해줍니다.
 
 ```text
 https://brainx.p-e.kr/mcp
 ```
 
-## What You Can Do
+## 할 수 있는 일
 
-- Search your BrainX notes from Codex.
-- Read a note when Codex needs exact source context.
-- Create new BrainX notes from drafts, summaries, or plans.
-- Check which BrainX MCP identity Codex is using.
+- Codex에서 BrainX 노트를 검색합니다.
+- Codex가 정확한 맥락이 필요할 때 특정 노트를 읽습니다.
+- 초안, 요약, 계획을 새 BrainX 노트로 저장합니다.
+- Codex가 어떤 BrainX MCP identity로 연결되어 있는지 확인합니다.
 
-## Requirements
+## 준비물
 
-- Codex app or Codex CLI.
-- A BrainX account.
-- A BrainX MCP API key with these scopes:
+- Codex app 또는 Codex CLI
+- BrainX 계정
+- 아래 scope가 포함된 BrainX MCP API key
   - `whoami`
   - `notes:read`
   - `ai:search`
   - `notes:write`
 
-Keep your API key private. Do not paste it into chats, commits, screenshots, or issue reports.
+API key는 개인 비밀값입니다. 채팅, 커밋, 스크린샷, 이슈에 붙여넣지 마세요.
 
-## Install
+## 설치
 
-Add this marketplace to Codex:
+Codex에 BrainX 플러그인 마켓플레이스를 추가합니다.
 
 ```bash
 codex plugin marketplace add Final-BrainX/codex-plugins --ref main
 ```
 
-Then open the Codex plugin directory, choose the `BrainX Codex Plugins` marketplace, and install `BrainX`.
+그 다음 Codex의 플러그인 목록을 열고 `BrainX Codex Plugins` 마켓플레이스에서 `BrainX`를 설치합니다.
 
-After installing, start a new Codex thread.
+설치 후에는 새 Codex thread를 열어주세요.
 
-## Set Your API Key
+## API key 설정
 
-Set `BRAINX_MCP_API_KEY` in your local environment.
+로컬 환경변수에 `BRAINX_MCP_API_KEY`를 설정합니다.
 
 PowerShell:
 
@@ -55,17 +55,17 @@ macOS/Linux shell:
 export BRAINX_MCP_API_KEY="replace-with-your-brainx-mcp-api-key"
 ```
 
-Restart Codex or open a new terminal after setting the variable.
+환경변수를 설정한 뒤에는 Codex를 다시 시작하거나 새 터미널을 열어주세요.
 
-## Fallback MCP Setup
+## MCP 수동 연결
 
-If the plugin is installed but BrainX tools do not appear, register the MCP server directly:
+플러그인을 설치했는데 BrainX 도구가 보이지 않으면 MCP 서버를 직접 등록할 수 있습니다.
 
 ```bash
 codex mcp add brainx --url "https://brainx.p-e.kr/mcp" --bearer-token-env-var BRAINX_MCP_API_KEY
 ```
 
-You can also run the helper script from a local clone of this repository:
+이 저장소를 로컬에 clone했다면 helper script를 실행해도 됩니다.
 
 PowerShell:
 
@@ -79,31 +79,31 @@ macOS/Linux shell:
 sh ./plugins/brainx/scripts/add-brainx-mcp.sh
 ```
 
-## Tools
+## 제공 도구
 
-The BrainX MCP server exposes:
+BrainX MCP 서버는 아래 도구를 제공합니다.
 
 - `brainx_whoami`
 - `brainx_search_notes`
 - `brainx_get_note`
 - `brainx_create_note`
 
-## Example Prompts
+## 예시 프롬프트
 
 ```text
-Search my BrainX notes for the latest MCP implementation details.
+내 BrainX 노트에서 MCP 구현 관련 내용을 찾아줘.
 ```
 
 ```text
-Create a BrainX note from this draft and tag it as meeting-notes.
+이 초안을 BrainX 노트로 저장하고 meeting-notes 태그를 붙여줘.
 ```
 
 ```text
-Find notes about FastAPI and summarize the key decisions.
+FastAPI 관련 노트를 찾아서 핵심 결정사항을 요약해줘.
 ```
 
-## Security
+## 보안
 
-- This repository does not contain API keys, service tokens, or user credentials.
-- The public plugin uses `BRAINX_MCP_API_KEY` from your local environment.
-- The BrainX MCP server enforces your API key scopes for each tool call.
+- 이 저장소에는 API key, service token, 사용자 인증 정보가 들어 있지 않습니다.
+- 공개 플러그인은 로컬 환경변수 `BRAINX_MCP_API_KEY`를 사용합니다.
+- BrainX MCP 서버는 각 도구 호출마다 API key scope를 확인합니다.
