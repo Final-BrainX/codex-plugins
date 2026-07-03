@@ -4,6 +4,12 @@
       "type": "http",
       "url": "https://brainx.p-e.kr/mcp",
       "oauth_resource": "https://brainx.p-e.kr/mcp",
+      "scopes": [
+        "whoami",
+        "notes:read",
+        "ai:search",
+        "notes:write"
+      ],
       "startup_timeout_sec": 10,
       "tool_timeout_sec": 60
     }

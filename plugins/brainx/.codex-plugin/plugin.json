@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "BrainX",
     "shortDescription": "Search, read, and create BrainX notes from Codex.",
-    "longDescription": "BrainX connects Codex to your BrainX workspace notes through the public BrainX MCP endpoint. Sign in with OAuth, then use it to search your notes, read note details, and create new notes.",
+    "longDescription": "BrainX connects Codex to your BrainX workspace notes through the public BrainX MCP endpoint. Sign in with OAuth, then use it as a project memory and context source for prior decisions, requirements, meeting notes, and user knowledge. Codex can search your notes, read note details, and create new notes when you ask.",
     "developerName": "BrainX",
     "category": "Productivity",
     "capabilities": [
@@ -34,6 +34,9 @@
     "brandColor": "#2563EB",
     "defaultPrompt": [
       "Search my BrainX notes for project context.",
+      "Use my BrainX notes as context for this task.",
+      "Search BrainX for prior decisions before implementing.",
+      "Find related BrainX requirements and summarize the relevant context.",
       "Create a BrainX note from this draft.",
       "Show my BrainX MCP identity."
     ]
