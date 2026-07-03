@@ -1,8 +1,9 @@
 {
   "mcpServers": {
     "brainx": {
+      "type": "http",
       "url": "https://brainx.p-e.kr/mcp",
-      "bearer_token_env_var": "BRAINX_MCP_API_KEY",
+      "oauth_resource": "https://brainx.p-e.kr/mcp",
       "startup_timeout_sec": 10,
       "tool_timeout_sec": 60
     }

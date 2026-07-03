@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "BrainX",
     "shortDescription": "Search, read, and create BrainX notes from Codex.",
-    "longDescription": "BrainX connects Codex to your BrainX workspace notes through the public BrainX MCP endpoint. Use it to search your notes, read note details, and create new notes after setting BRAINX_MCP_API_KEY.",
+    "longDescription": "BrainX connects Codex to your BrainX workspace notes through the public BrainX MCP endpoint. Sign in with OAuth, then use it to search your notes, read note details, and create new notes.",
     "developerName": "BrainX",
     "category": "Productivity",
     "capabilities": [

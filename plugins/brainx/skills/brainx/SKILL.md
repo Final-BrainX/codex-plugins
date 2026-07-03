@@ -16,8 +16,8 @@ Use the BrainX MCP tools when the user wants to work with their BrainX workspace
 
 ## Required setup
 
-The user must have a BrainX MCP API key in `BRAINX_MCP_API_KEY`.
-The key should include these scopes:
+The user must have installed the BrainX plugin and signed in to the BrainX MCP server with OAuth.
+The OAuth login should include these scopes:
 
 - `whoami`
 - `notes:read`
@@ -28,7 +28,8 @@ If BrainX tools are not available, ask the user to install the BrainX plugin and
 
 ```bash
 codex plugin marketplace add Final-BrainX/codex-plugins --ref main
-codex mcp add brainx --url "https://brainx.p-e.kr/mcp" --bearer-token-env-var BRAINX_MCP_API_KEY
+codex mcp add brainx --url "https://brainx.p-e.kr/mcp" --oauth-resource "https://brainx.p-e.kr/mcp"
+codex mcp login brainx --scopes whoami,notes:read,ai:search,notes:write
 ```
 
 ## Workflow
@@ -38,4 +39,4 @@ codex mcp add brainx --url "https://brainx.p-e.kr/mcp" --bearer-token-env-var BR
 3. For exact source details, call `brainx_get_note` on relevant result note ids.
 4. For saving useful outputs, call `brainx_create_note` with a clear title, Markdown body, and relevant tags.
 
-Do not ask the user for their API key in chat. If the key is missing, ask them to set `BRAINX_MCP_API_KEY` locally and restart Codex or open a new thread.
+Do not ask the user for OAuth tokens or credentials in chat. If authentication is missing, ask them to run the OAuth login command locally and restart Codex or open a new thread.

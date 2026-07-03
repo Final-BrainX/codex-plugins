@@ -19,13 +19,6 @@ https://brainx.p-e.kr/mcp
 
 - Codex app 또는 Codex CLI
 - BrainX 계정
-- 아래 scope가 포함된 BrainX MCP API key
-  - `whoami`
-  - `notes:read`
-  - `ai:search`
-  - `notes:write`
-
-API key는 개인 비밀값입니다. 채팅, 커밋, 스크린샷, 이슈에 붙여넣지 마세요.
 
 ## 설치
 
@@ -37,32 +30,21 @@ codex plugin marketplace add Final-BrainX/codex-plugins --ref main
 
 그 다음 Codex의 플러그인 목록을 열고 `BrainX Codex Plugins` 마켓플레이스에서 `BrainX`를 설치합니다.
 
-설치 후에는 새 Codex thread를 열어주세요.
-
-## API key 설정
-
-로컬 환경변수에 `BRAINX_MCP_API_KEY`를 설정합니다.
-
-PowerShell:
-
-```powershell
-setx BRAINX_MCP_API_KEY "replace-with-your-brainx-mcp-api-key"
-```
-
-macOS/Linux shell:
+설치 후 BrainX MCP에 OAuth로 로그인합니다.
 
 ```bash
-export BRAINX_MCP_API_KEY="replace-with-your-brainx-mcp-api-key"
+codex mcp login brainx --scopes whoami,notes:read,ai:search,notes:write
 ```
 
-환경변수를 설정한 뒤에는 Codex를 다시 시작하거나 새 터미널을 열어주세요.
+로그인 후에는 새 Codex thread를 열어주세요.
 
 ## MCP 수동 연결
 
 플러그인을 설치했는데 BrainX 도구가 보이지 않으면 MCP 서버를 직접 등록할 수 있습니다.
 
 ```bash
-codex mcp add brainx --url "https://brainx.p-e.kr/mcp" --bearer-token-env-var BRAINX_MCP_API_KEY
+codex mcp add brainx --url "https://brainx.p-e.kr/mcp" --oauth-resource "https://brainx.p-e.kr/mcp"
+codex mcp login brainx --scopes whoami,notes:read,ai:search,notes:write
 ```
 
 이 저장소를 로컬에 clone했다면 helper script를 실행해도 됩니다.
@@ -104,6 +86,6 @@ FastAPI 관련 노트를 찾아서 핵심 결정사항을 요약해줘.
 
 ## 보안
 
-- 이 저장소에는 API key, service token, 사용자 인증 정보가 들어 있지 않습니다.
-- 공개 플러그인은 로컬 환경변수 `BRAINX_MCP_API_KEY`를 사용합니다.
-- BrainX MCP 서버는 각 도구 호출마다 API key scope를 확인합니다.
+- 이 저장소에는 service token, 사용자 인증 정보, OAuth token이 들어 있지 않습니다.
+- Codex는 BrainX OAuth 로그인 후 발급된 token으로 MCP 서버에 연결합니다.
+- BrainX MCP 서버는 각 도구 호출마다 OAuth token scope를 확인합니다.
