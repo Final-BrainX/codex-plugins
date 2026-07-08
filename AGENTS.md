@@ -4,6 +4,8 @@
 
 이 저장소는 BrainX용 공개 Codex 플러그인 마켓플레이스입니다. 사람용 설치/사용 안내는 `README.md`, 마켓플레이스 메타데이터는 `.agents/plugins/marketplace.json`, 실제 플러그인은 `plugins/brainx/` 아래에 있습니다.
 
+관련 sibling 프로젝트는 참조 맥락으로만 다룹니다. `../brainX`는 이 플러그인이 연결하는 BrainX 서비스이고, `../brainx-cli`는 이 프로젝트를 다루는 CLI 앱입니다. 사용자가 명시적으로 범위를 넓히지 않는 한 이 저장소 안에서만 문서와 코드를 변경합니다.
+
 ## Context Vault
 
 세부 작업 지침, 결정 기록, worklog 규칙은 `vaults/INDEX.md`에서 필요한 문서만 골라 읽습니다. 루트 가이드는 항상 읽어야 할 규칙만 유지합니다.
@@ -19,6 +21,7 @@
 
 - 인증/설치 흐름을 바꿀 때는 `plugins/brainx/.mcp.json`, `plugins/brainx/.codex-plugin/plugin.json`, `README.md`, `plugins/brainx/skills/brainx/SKILL.md`, helper script를 함께 확인합니다.
 - BrainX plugin은 노트 CRUD뿐 아니라 프로젝트 메모리와 사용자 지식 컨텍스트 소스입니다. skill/README 문구를 줄일 때 이 역할을 제거하지 않습니다.
+- `../brainX`, `../brainx-cli` 등 sibling 디렉터리는 사용자가 명시적으로 요청하지 않는 한 읽거나 수정하지 않습니다.
 - credential, OAuth token, service token, API key를 문서나 커밋에 넣지 않습니다.
 - `codex mcp add` 또는 `codex mcp login`을 실행하는 helper script는 로컬 Codex 설정을 바꾸므로, 검증 단계에서는 사용자가 명시적으로 요청하지 않는 한 실행하지 않습니다.
 - 사람용 설명은 `README.md`에 두고, agent-facing 반복 규칙과 작업 기록은 `vaults/` 아래에 둡니다.

@@ -8,6 +8,12 @@
 - `plugins/brainx/scripts/`: 수동 MCP 등록과 OAuth login helper script입니다.
 - `README.md`: 사람과 팀원이 보는 설치/사용 안내입니다.
 
+## 관련 프로젝트
+
+- `../brainX`: BrainX 서비스 본체와 MCP endpoint가 속한 프로젝트입니다.
+- `../brainx-cli`: 이 Codex plugin 프로젝트를 다루는 CLI 앱입니다.
+- 이 저장소의 plugin 문서화와 유지보수 작업에서는 sibling 프로젝트를 수정하지 않습니다.
+
 ## 컨텍스트 소스 동작
 
 BrainX plugin은 단순 노트 CRUD가 아니라 프로젝트 메모리와 사용자 지식 컨텍스트 소스입니다. skill 문구를 수정할 때 다음 흐름을 유지합니다.

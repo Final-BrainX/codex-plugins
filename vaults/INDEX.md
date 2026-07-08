@@ -2,6 +2,14 @@
 
 이 디렉터리는 agent-facing 문서의 라우터입니다. 필요한 문서만 열어 컨텍스트를 작게 유지합니다.
 
+## 프로젝트 경계
+
+- 이 저장소 `codex-plugins`: BrainX Codex 플러그인 마켓플레이스와 `brainx` 플러그인을 다룹니다.
+- `../brainX`: 이 플러그인이 연결하는 BrainX 서비스입니다. 이 저장소 작업에서는 참조 관계로만 기록하고 수정하지 않습니다.
+- `../brainx-cli`: 이 프로젝트를 다루는 CLI 앱입니다. CLI 앱 변경은 해당 sibling 프로젝트에서 별도로 수행합니다.
+
+## 문서 라우팅
+
 - `vaults/workflows/verification.md`: BrainX Codex 플러그인의 설정/문서 변경을 검증하는 명령 모음입니다. 인증, MCP 설정, helper script, README를 바꿀 때 읽습니다.
 - `vaults/agents/plugin.md`: BrainX plugin의 manifest, MCP config, skill, README 유지보수 규칙입니다. 플러그인 문구, context source 동작, tool 안내를 바꿀 때 읽습니다.
 - `vaults/workflows/worklog.md`: 작업 종료 시 worklog를 남기는 규칙입니다. 코드/문서/설정 변경을 완료할 때 읽습니다.

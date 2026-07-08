@@ -9,6 +9,13 @@ BrainX용 공개 Codex 플러그인 마켓플레이스입니다.
 https://brainx.p-e.kr/mcp
 ```
 
+## 관련 프로젝트
+
+- 이 저장소(`codex-plugins`)는 BrainX 서비스나 CLI 앱이 아니라 Codex 플러그인 마켓플레이스와 `brainx` 플러그인을 다룹니다.
+- `../brainX`는 이 플러그인이 연결하는 BrainX 서비스 프로젝트입니다.
+- `../brainx-cli`는 이 프로젝트를 다루는 CLI 앱 프로젝트입니다.
+- 이 저장소의 문서와 변경은 기본적으로 이 프로젝트 디렉터리 안에서만 수행합니다.
+
 ## 할 수 있는 일
 
 - Codex에서 BrainX 노트를 검색합니다.
